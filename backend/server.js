@@ -23,7 +23,7 @@ app.use(
 app.use(express.json());
 
 const sessionMiddleware = session({
-  secret: "dev-secret-change-in-production",
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   cookie: {
